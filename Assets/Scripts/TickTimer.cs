@@ -1,6 +1,6 @@
 using UnityEngine;
 
-//todo: сделать по другому - отдельный класс WorldDate
+//Класс-таймер
 public class TickTimer
 {
     private float _currentTime;
