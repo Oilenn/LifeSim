@@ -1,15 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Action;
+using Effect;
 using UnityEngine;
 
 public class Player : MonoBehaviour, ILifeable
 {
     [SerializeField] private int _health;
     [SerializeField] private int _maxHealth;
-    
-    private TickTimer _timer;
 
     private PlayerEffectController _playerEffectController;
     
@@ -20,22 +18,6 @@ public class Player : MonoBehaviour, ILifeable
         {
             if (value <= _maxHealth || value > 0) _health = value;
             else throw new ArgumentException("Health cannot be more than maximal value");
-        }
-    }
-
-    public void Start()
-    {
-        _timer = new TickTimer();
-        _timer.Start(5);
-    }
-    
-    public void Update()
-    {
-        _timer.Tick();
-        if (_timer.IsReached)
-        {
-            TickTime();
-            _timer.Start(5);
         }
     }
     
@@ -50,7 +32,7 @@ public class Player : MonoBehaviour, ILifeable
     }
 
     //Метод для прохода части времени
-    public void TickTime()
+    public void CheckCondition()
     {
         if (_health < 0)
         {

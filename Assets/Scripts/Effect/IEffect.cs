@@ -1,4 +1,4 @@
-namespace Action
+namespace Effect
 {
     public interface IEffect
     {

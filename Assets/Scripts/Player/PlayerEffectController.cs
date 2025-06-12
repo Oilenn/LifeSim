@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Action;
+using Effect;
 using UnityEngine;
 
 public class PlayerEffectController : MonoBehaviour
