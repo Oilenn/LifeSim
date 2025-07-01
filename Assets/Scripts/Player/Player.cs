@@ -6,11 +6,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour, ILifeable
 {
-    [SerializeField] private int _health;
-    [SerializeField] private int _maxHealth;
-
-    private PlayerEffectController _playerEffectController;
-    
+    [SerializeField] private int _health = 100;
     public int Health
     {
         get => _health;
@@ -21,6 +17,17 @@ public class Player : MonoBehaviour, ILifeable
         }
     }
     
+    [SerializeField] private int _maxHealth = 100;
+    public int MaxHealth => _maxHealth;
+
+    private String _name;
+    public String Name => _name;
+    
+    private String _surname;
+    public String Surname => _surname;
+    
+    
+
     public void Die()
     {
         throw new System.NotImplementedException();
@@ -40,3 +47,7 @@ public class Player : MonoBehaviour, ILifeable
         }
     }
 }
+enum Sex{
+    Male,
+    Female
+};

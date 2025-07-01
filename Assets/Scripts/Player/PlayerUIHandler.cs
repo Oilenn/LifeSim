@@ -1,21 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerUIHandler : MonoBehaviour
 {
-    [SerializeField] private Slider _healthBar;
+    [SerializeField] private Player _player;
     
-    // Start is called before the first frame update
+    [SerializeField] private Slider _healthBar;
+    [SerializeField] private TextMeshProUGUI _personName;
+    [SerializeField] private TextMeshProUGUI _personSurname;
+    
     void Start()
     {
-        
+        _healthBar.maxValue = _player.MaxHealth;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        _healthBar.value = _player.Health;
+        _personName.text = _player.Name;
+        _personSurname.text = _player.Surname;
     }
 }
