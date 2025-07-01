@@ -15,6 +15,10 @@ public class WorldTime : MonoBehaviour
     private TickTimer _timer;
     
     public event Action OnNewDay;
+
+    public int CurrentDay => _currentDay;
+    public int CurrentMonth => _currentMonth;
+    public int CurrentYear => _currentYear;
     
     private void NextDay()
     {
