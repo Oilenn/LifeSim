@@ -27,9 +27,4 @@ public class GameController : MonoBehaviour
         _playerEffectController.ActivateEffects(_player);
         _player.CheckCondition();
     }
-    
-    void Update()
-    {
-        
-    }
 }
